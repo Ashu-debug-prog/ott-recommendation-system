@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- OpenAPI -->
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+
+		<!-- EF Core -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+
+		<!-- ✅ ADD THIS (VERY IMPORTANT) -->
+		<PackageReference Include="Microsoft.ML" Version="5.0.0" />
+
+		<!-- Recommender -->
+		<PackageReference Include="Microsoft.ML.Recommender" Version="0.23.0" />
+
+		<!-- MySQL -->
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+
+		<!-- RabbitMQ -->
+		<PackageReference Include="RabbitMQ.Client" Version="6.6.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+	</ItemGroup>
+
+</Project>

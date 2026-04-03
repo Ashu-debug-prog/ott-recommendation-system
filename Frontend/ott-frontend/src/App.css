@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(45deg, red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Logout button */
+.logout-btn {
+  background: linear-gradient(45deg, red, #ff4b2b);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Section */
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-left: 4px solid red;
+  padding-left: 10px;
+}
+
+/* Content spacing */
+.content {
+  padding: 20px;
+}
+
+/* Auth Page */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: radial-gradient(circle, #111, #000);
+}
+
+.auth-box {
+  padding: 30px;
+  border-radius: 15px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0px 10px 30px rgba(255,0,0,0.3);
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;   /* CENTER LOGO */
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  background: black;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+}
+
+/* Logout button (move right) */
+.logout-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+
+  background: red;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  color: white;
+}
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* BIG PLAY BUTTON */
+.play-main {
+  font-size: 22px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+
+  background: linear-gradient(45deg, red, orange);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.play-main:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 10px 25px rgba(255, 0, 0, 0.6);
+}

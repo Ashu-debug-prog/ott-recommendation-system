@@ -1,0 +1,42 @@
+.movie-list-container {
+  padding: 20px;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #fff;
+
+  border-left: 4px solid red;
+  padding-left: 10px;
+}
+
+/* Horizontal scroll row */
+.movie-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar (clean UI) */
+.movie-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/* Each card wrapper */
+.movie-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.05);
+}

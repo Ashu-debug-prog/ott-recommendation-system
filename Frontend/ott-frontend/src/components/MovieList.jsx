@@ -1,6 +1,6 @@
 import { movies } from "../data/movies";
 import MovieCard from "./MovieCard";
-import "./MovieList.css"; // 👈 ADD THIS
+import "./MovieList.css";
 
 const MovieList = ({ setSelectedMovie }) => {
   return (

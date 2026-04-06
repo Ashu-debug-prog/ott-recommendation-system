@@ -1,0 +1,69 @@
+.recommendation-list-container {
+  padding: 20px 0;
+}
+
+.recommendation-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  border-left: 4px solid #ff006e;
+  padding-left: 16px;
+  letter-spacing: 0.5px;
+}
+
+.recommendation-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+
+/* Scrollbar styling */
+.recommendation-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.recommendation-row::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.recommendation-row::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff006e, #fb5607);
+  border-radius: 10px;
+}
+
+.recommendation-row::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff006e, #ffbe0b);
+}
+
+/* Card wrapper */
+.recommendation-card-wrapper {
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.recommendation-card-wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* Smooth scrolling support */
+@supports (scroll-behavior: smooth) {
+  .recommendation-row {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendation-title {
+    font-size: 20px;
+  }
+
+  .recommendation-row {
+    gap: 16px;
+  }
+}

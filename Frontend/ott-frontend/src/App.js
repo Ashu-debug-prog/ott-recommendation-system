@@ -59,7 +59,7 @@ function App() {
             <MovieList setSelectedMovie={setSelectedMovie} />
           </>
         ) : (
-          <MovieDetails movieId={selectedMovie} />
+          <MovieDetails movieId={selectedMovie} setSelectedMovie={setSelectedMovie} />
         )}
       </div>
     </div>

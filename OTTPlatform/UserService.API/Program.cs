@@ -53,7 +53,7 @@ namespace UserService.API
             });
 
             var app = builder.Build();
-            app.UseCors("AllowReact");
+           
 
             // ---------------- MIDDLEWARE ----------------
             if (app.Environment.IsDevelopment())
@@ -63,6 +63,7 @@ namespace UserService.API
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowReact");
 
             app.UseAuthorization();
 

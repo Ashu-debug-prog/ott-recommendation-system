@@ -25,6 +25,11 @@ namespace RecommendationService.API
 
             // 🔥 FIX: ML Service should be SINGLETON (IMPORTANT)
             builder.Services.AddSingleton<MLModelService>();
+            builder.Services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.NumberHandling =
+                    System.Text.Json.Serialization.JsonNumberHandling.AllowNamedFloatingPointLiterals;
+            });
 
             // 🔥 Swagger
             builder.Services.AddEndpointsApiExplorer();
@@ -62,6 +67,7 @@ namespace RecommendationService.API
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowReact");
 
             app.UseAuthorization();
 

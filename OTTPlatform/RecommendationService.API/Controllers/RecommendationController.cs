@@ -112,28 +112,36 @@ namespace RecommendationService.API.Controllers
         [HttpGet("ml/{userId}")]
         public IActionResult GetMLRecommendations(int userId)
         {
-            var watchedMovieIds = _db.UserWatches
+            var watched = _db.UserWatches
                 .Where(x => x.UserId == userId)
                 .Select(x => x.MovieId)
                 .ToList();
 
             var movies = _db.Movies
-                .Where(m => !watchedMovieIds.Contains(m.MovieId) &&
-                            m.SeriesId == null)
+                .Where(m => !watched.Contains(m.MovieId) && m.SeriesId == null)
                 .ToList();
 
-            var recommendations = movies
-                .Select(m => new
+            var result = new List<object>();
+
+            foreach (var m in movies)
+            {
+                float score = _mlService.Predict(userId, m.MovieId);
+
+                // 🔥 DOUBLE SAFETY (VERY IMPORTANT)
+                if (float.IsNaN(score) || float.IsInfinity(score))
+                    score = 0;
+
+                result.Add(new
                 {
                     MovieId = m.MovieId,
                     Title = m.Title,
-                    Score = _mlService.Predict(userId, m.MovieId)
-                })
-                .OrderByDescending(x => x.Score)
-                .Take(5)
-                .ToList();
+                    Score = score
+                });
+            }
 
-            return Ok(recommendations);
+            return Ok(result
+                .OrderByDescending(x => ((dynamic)x).Score)
+                .Take(5));
         }
     }
 }

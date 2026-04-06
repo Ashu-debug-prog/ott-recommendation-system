@@ -1,25 +1,26 @@
 .movie-list-container {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 /* Section Title */
 .section-title {
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
   color: #fff;
-
-  border-left: 4px solid red;
-  padding-left: 10px;
+  border-left: 4px solid #ff006e;
+  padding-left: 16px;
+  letter-spacing: 0.5px;
 }
 
 /* Horizontal scroll row */
 .movie-row {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   overflow-x: auto;
-  padding-bottom: 10px;
-
+  padding: 12px 0;
   scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 /* Hide scrollbar (clean UI) */
@@ -27,16 +28,33 @@
   height: 6px;
 }
 
-.movie-row::-webkit-scrollbar-thumb {
-  background: red;
+.movie-row::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff006e, #fb5607);
+  border-radius: 10px;
+}
+
+.movie-row::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff006e, #ffbe0b);
 }
 
 /* Each card wrapper */
 .movie-wrapper {
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .movie-wrapper:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+
+/* Smooth scrolling support */
+@supports (scroll-behavior: smooth) {
+  .movie-row {
+    scroll-behavior: smooth;
+  }
 }

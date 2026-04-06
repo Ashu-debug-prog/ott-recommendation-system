@@ -15,7 +15,7 @@ const MovieList = ({ setSelectedMovie }) => {
           <div
             key={m.movieId}
             className="movie-wrapper"
-            onClick={() => setSelectedMovie(m.movieId)}  // ✅ FIXED CLICK
+            onClick={() => setSelectedMovie && setSelectedMovie({ movieId: m.movieId, fullObject: m })}
           >
             <MovieCard movie={m} />
           </div>

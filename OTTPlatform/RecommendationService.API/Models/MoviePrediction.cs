@@ -1,7 +1,7 @@
-﻿namespace RecommendationService.API.Models
+﻿using Microsoft.ML.Data;
+
+public class MoviePrediction
 {
-    public class MoviePrediction
-    {
-        public float Score;
-    }
+    [ColumnName("Score")]
+    public float Score { get; set; }
 }
